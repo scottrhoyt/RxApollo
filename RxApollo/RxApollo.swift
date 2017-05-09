@@ -12,7 +12,6 @@ import Apollo
 
 enum RxApolloError: Error {
     case graphQLErrors([GraphQLError])
-    case noData
 }
 
 public struct ApolloReactiveExtensions {
@@ -22,17 +21,17 @@ public struct ApolloReactiveExtensions {
         self.client = client
     }
 
-    public func query<Query: GraphQLQuery>(query: Query, cachePolicy: CachePolicy = .returnCacheDataElseFetch, queue: DispatchQueue = DispatchQueue.main) -> Single<Query.Data> {
-        return Single.create { single in
+    public func query<Query: GraphQLQuery>(query: Query, cachePolicy: CachePolicy = .returnCacheDataElseFetch, queue: DispatchQueue = DispatchQueue.main) -> Maybe<Query.Data> {
+        return Maybe.create { maybe in
             let cancellable = self.client.fetch(query: query, cachePolicy: cachePolicy, queue: queue) { result, error in
                 if let error = error {
-                    single(.error(error))
+                    maybe(.error(error))
                 } else if let errors = result?.errors {
-                    single(.error(RxApolloError.graphQLErrors(errors)))
+                    maybe(.error(RxApolloError.graphQLErrors(errors)))
                 } else if let data = result?.data {
-                    single(.success(data))
+                    maybe(.success(data))
                 } else {
-                    single(.error(RxApolloError.noData))
+                    maybe(.completed)
                 }
             }
 
@@ -42,17 +41,15 @@ public struct ApolloReactiveExtensions {
         }
     }
 
-    public func watch<Query: GraphQLQuery>(query: Query, cachePolicy: CachePolicy = .returnCacheDataElseFetch, queue: DispatchQueue = DispatchQueue.main) -> Observable<Query.Data> {
+    public func watch<Query: GraphQLQuery>(query: Query, cachePolicy: CachePolicy = .returnCacheDataElseFetch, queue: DispatchQueue = DispatchQueue.main) -> Observable<Query.Data?> {
         return Observable.create { observer in
             let watcher = self.client.watch(query: query, cachePolicy: cachePolicy, queue: queue) { result, error in
                 if let error = error {
                     observer.onError(error)
                 } else if let errors = result?.errors {
                     observer.onError(RxApolloError.graphQLErrors(errors))
-                } else if let data = result?.data {
-                    observer.onNext(data)
                 } else {
-                    observer.onError(RxApolloError.noData)
+                    observer.onNext(result?.data)
                 }
             }
 
@@ -62,17 +59,17 @@ public struct ApolloReactiveExtensions {
         }
     }
 
-    public func perform<Mutation: GraphQLMutation>(mutation: Mutation, queue: DispatchQueue = DispatchQueue.main) -> Single<Mutation.Data> {
-        return Single.create { single in
+    public func perform<Mutation: GraphQLMutation>(mutation: Mutation, queue: DispatchQueue = DispatchQueue.main) -> Maybe<Mutation.Data> {
+        return Maybe.create { maybe in
             let cancellable = self.client.perform(mutation: mutation, queue: queue) { result, error in
                 if let error = error {
-                    single(.error(error))
+                    maybe(.error(error))
                 } else if let errors = result?.errors {
-                    single(.error(RxApolloError.graphQLErrors(errors)))
+                    maybe(.error(RxApolloError.graphQLErrors(errors)))
                 } else if let data = result?.data {
-                    single(.success(data))
+                    maybe(.success(data))
                 } else {
-                    single(.error(RxApolloError.noData))
+                    maybe(.completed)
                 }
             }
 
