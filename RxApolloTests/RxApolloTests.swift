@@ -31,4 +31,31 @@ class RxApolloTests: XCTestCase {
 
         XCTAssertEqual(result?.hero?.name, "Luke Skywalker")
     }
+
+    func testUnsuccessfulQuery() throws {
+        let query = HeroNameQuery()
+
+        let networkTransport = MockNetworkTransport(body: [
+            "data": [
+                "hero": [
+                    "__typename": "Human"
+                ]
+            ]
+        ])
+
+        let client = ApolloClient(networkTransport: networkTransport)
+
+        do {
+            _ = try client.rx.query(query: query).toBlocking().single()
+        } catch let error as GraphQLResultError {
+            XCTAssertEqual(error.pathDescription, "hero.name")
+            return
+        } catch {
+            // Shouldn't get here
+            XCTFail()
+        }
+
+        // Shouldn't get here
+        XCTFail()
+    }
 }
