@@ -99,8 +99,6 @@ class RxApolloTests: XCTestCase {
 
         let results = try watched.take(2).timeout(5, scheduler: MainScheduler.instance).toBlocking().toArray()
 
-        XCTAssertEqual(results.count, 2)
-
         let expectedFriendsNames = ["Luke Skywalker", "Han Solo", "Leia Organa"]
 
         let firstHeroName = results[0].hero?.name
