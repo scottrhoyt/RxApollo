@@ -97,7 +97,7 @@ class RxApolloTests: XCTestCase {
 
         client.fetch(query: HeroNameQuery(), cachePolicy: .fetchIgnoringCacheData)
 
-        let results = try watched.take(0.2, scheduler: MainScheduler.instance).toBlocking().toArray()
+        let results = try watched.take(2).timeout(5, scheduler: MainScheduler.instance).toBlocking().toArray()
 
         XCTAssertEqual(results.count, 2)
 
