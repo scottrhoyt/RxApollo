@@ -60,20 +60,9 @@
 		3BBA4BAA1EC22A5A005350BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BBA4BB71EC22B5F005350BC /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		3BF9A1611EC2574B001F66F0 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		3BF9A1621EC2574B001F66F0 /* CreateReviewForEpisode.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CreateReviewForEpisode.graphql; sourceTree = "<group>"; };
 		3BF9A1631EC2574B001F66F0 /* HeroAndFriendsNames.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HeroAndFriendsNames.graphql; sourceTree = "<group>"; };
-		3BF9A1641EC2574B001F66F0 /* HeroAppearsIn.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HeroAppearsIn.graphql; sourceTree = "<group>"; };
-		3BF9A1651EC2574B001F66F0 /* HeroDetails.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HeroDetails.graphql; sourceTree = "<group>"; };
-		3BF9A1661EC2574B001F66F0 /* HeroDetailsWithFragment.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HeroDetailsWithFragment.graphql; sourceTree = "<group>"; };
 		3BF9A1671EC2574B001F66F0 /* HeroName.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HeroName.graphql; sourceTree = "<group>"; };
-		3BF9A1681EC2574B001F66F0 /* HeroNameConditional.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HeroNameConditional.graphql; sourceTree = "<group>"; };
-		3BF9A1691EC2574B001F66F0 /* HeroParentTypeDependentField.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HeroParentTypeDependentField.graphql; sourceTree = "<group>"; };
-		3BF9A16A1EC2574B001F66F0 /* HeroTypeDependentAliasedField.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HeroTypeDependentAliasedField.graphql; sourceTree = "<group>"; };
-		3BF9A16B1EC2574B001F66F0 /* HumanWithNullMass.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HumanWithNullMass.graphql; sourceTree = "<group>"; };
-		3BF9A16C1EC2574B001F66F0 /* SameHeroTwice.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SameHeroTwice.graphql; sourceTree = "<group>"; };
 		3BF9A16D1EC2574B001F66F0 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
-		3BF9A16E1EC2574B001F66F0 /* Starship.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Starship.graphql; sourceTree = "<group>"; };
-		3BF9A16F1EC2574B001F66F0 /* TwoHeroes.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwoHeroes.graphql; sourceTree = "<group>"; };
 		3BF9A1821EC25EDA001F66F0 /* MockNetworkTransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkTransport.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,20 +152,9 @@
 			isa = PBXGroup;
 			children = (
 				3BF9A1611EC2574B001F66F0 /* API.swift */,
-				3BF9A1621EC2574B001F66F0 /* CreateReviewForEpisode.graphql */,
 				3BF9A1631EC2574B001F66F0 /* HeroAndFriendsNames.graphql */,
-				3BF9A1641EC2574B001F66F0 /* HeroAppearsIn.graphql */,
-				3BF9A1651EC2574B001F66F0 /* HeroDetails.graphql */,
-				3BF9A1661EC2574B001F66F0 /* HeroDetailsWithFragment.graphql */,
 				3BF9A1671EC2574B001F66F0 /* HeroName.graphql */,
-				3BF9A1681EC2574B001F66F0 /* HeroNameConditional.graphql */,
-				3BF9A1691EC2574B001F66F0 /* HeroParentTypeDependentField.graphql */,
-				3BF9A16A1EC2574B001F66F0 /* HeroTypeDependentAliasedField.graphql */,
-				3BF9A16B1EC2574B001F66F0 /* HumanWithNullMass.graphql */,
-				3BF9A16C1EC2574B001F66F0 /* SameHeroTwice.graphql */,
 				3BF9A16D1EC2574B001F66F0 /* schema.json */,
-				3BF9A16E1EC2574B001F66F0 /* Starship.graphql */,
-				3BF9A16F1EC2574B001F66F0 /* TwoHeroes.graphql */,
 			);
 			path = GraphQL;
 			sourceTree = "<group>";
