@@ -471,6 +471,7 @@
 		3BBA4BAF1EC22A5A005350BC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEVELOPMENT_TEAM = 3NVCP5J66M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -487,6 +488,7 @@
 		3BBA4BB01EC22A5A005350BC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEVELOPMENT_TEAM = 3NVCP5J66M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
