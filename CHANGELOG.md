@@ -2,13 +2,27 @@
 
 ##### Breaking
 
+* None
+
+##### Enhancements
+
+* None
+
+##### Bug Fixes
+
+* None
+
+## 0.2.0
+
+##### Breaking
+
 * `query` and `perform` are now `Maybe`s to reflect that they might not return data (e.g. depending on the cache policy).
 * `RxApolloError` no longer has a `noData` case.
 * `watch` no does not emit an event when neither data or an error were passed to the respective callback.
 
 ##### Enhancements
 
-* None
+* Added some test coverage.
 
 ##### Bug Fixes
 
