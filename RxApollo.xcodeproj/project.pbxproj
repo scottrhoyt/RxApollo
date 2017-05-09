@@ -11,7 +11,37 @@
 		3BBA4B9C1EC1B9E0005350BC /* RxApollo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA4B9B1EC1B9E0005350BC /* RxApollo.swift */; };
 		3BBA4BA01EC1BBB7005350BC /* Apollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBA4B9D1EC1BB99005350BC /* Apollo.framework */; };
 		3BBA4BA11EC1BBB7005350BC /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBA4B9E1EC1BB99005350BC /* RxSwift.framework */; };
+		3BBA4BA91EC22A5A005350BC /* RxApolloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA4BA81EC22A5A005350BC /* RxApolloTests.swift */; };
+		3BBA4BAB1EC22A5A005350BC /* RxApollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBA4B901EC1B9AF005350BC /* RxApollo.framework */; };
+		3BBA4BB11EC22AA2005350BC /* Apollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBA4B9D1EC1BB99005350BC /* Apollo.framework */; };
+		3BBA4BB21EC22AA2005350BC /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBA4B9E1EC1BB99005350BC /* RxSwift.framework */; };
+		3BBA4BB41EC22AEE005350BC /* Apollo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3BBA4B9D1EC1BB99005350BC /* Apollo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3BBA4BB51EC22AEE005350BC /* RxSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3BBA4B9E1EC1BB99005350BC /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3BBA4BAC1EC22A5A005350BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BBA4B871EC1B9AF005350BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BBA4B8F1EC1B9AF005350BC;
+			remoteInfo = RxApollo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3BBA4BB31EC22AE3005350BC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3BBA4BB41EC22AEE005350BC /* Apollo.framework in CopyFiles */,
+				3BBA4BB51EC22AEE005350BC /* RxSwift.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3BBA4B901EC1B9AF005350BC /* RxApollo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxApollo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,6 +50,9 @@
 		3BBA4B9B1EC1B9E0005350BC /* RxApollo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxApollo.swift; sourceTree = "<group>"; };
 		3BBA4B9D1EC1BB99005350BC /* Apollo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Apollo.framework; path = Carthage/Build/iOS/Apollo.framework; sourceTree = "<group>"; };
 		3BBA4B9E1EC1BB99005350BC /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		3BBA4BA61EC22A5A005350BC /* RxApolloTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxApolloTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BBA4BA81EC22A5A005350BC /* RxApolloTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxApolloTests.swift; sourceTree = "<group>"; };
+		3BBA4BAA1EC22A5A005350BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +65,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3BBA4BA31EC22A5A005350BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BBA4BAB1EC22A5A005350BC /* RxApollo.framework in Frameworks */,
+				3BBA4BB11EC22AA2005350BC /* Apollo.framework in Frameworks */,
+				3BBA4BB21EC22AA2005350BC /* RxSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -39,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				3BBA4B921EC1B9AF005350BC /* RxApollo */,
+				3BBA4BA71EC22A5A005350BC /* RxApolloTests */,
 				3BBA4B911EC1B9AF005350BC /* Products */,
 				3BBA4B9F1EC1BBA5005350BC /* Frameworks */,
 			);
@@ -48,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				3BBA4B901EC1B9AF005350BC /* RxApollo.framework */,
+				3BBA4BA61EC22A5A005350BC /* RxApolloTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +114,15 @@
 				3BBA4B9E1EC1BB99005350BC /* RxSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3BBA4BA71EC22A5A005350BC /* RxApolloTests */ = {
+			isa = PBXGroup;
+			children = (
+				3BBA4BA81EC22A5A005350BC /* RxApolloTests.swift */,
+				3BBA4BAA1EC22A5A005350BC /* Info.plist */,
+			);
+			path = RxApolloTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,12 +157,32 @@
 			productReference = 3BBA4B901EC1B9AF005350BC /* RxApollo.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		3BBA4BA51EC22A5A005350BC /* RxApolloTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BBA4BAE1EC22A5A005350BC /* Build configuration list for PBXNativeTarget "RxApolloTests" */;
+			buildPhases = (
+				3BBA4BA21EC22A5A005350BC /* Sources */,
+				3BBA4BA31EC22A5A005350BC /* Frameworks */,
+				3BBA4BA41EC22A5A005350BC /* Resources */,
+				3BBA4BB31EC22AE3005350BC /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3BBA4BAD1EC22A5A005350BC /* PBXTargetDependency */,
+			);
+			name = RxApolloTests;
+			productName = RxApolloTests;
+			productReference = 3BBA4BA61EC22A5A005350BC /* RxApolloTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		3BBA4B871EC1B9AF005350BC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Scott Hoyt";
 				TargetAttributes = {
@@ -116,6 +190,11 @@
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = 3NVCP5J66M;
 						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+					3BBA4BA51EC22A5A005350BC = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 3NVCP5J66M;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -133,12 +212,20 @@
 			projectRoot = "";
 			targets = (
 				3BBA4B8F1EC1B9AF005350BC /* RxApollo */,
+				3BBA4BA51EC22A5A005350BC /* RxApolloTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3BBA4B8E1EC1B9AF005350BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BBA4BA41EC22A5A005350BC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -156,7 +243,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3BBA4BA21EC22A5A005350BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BBA4BA91EC22A5A005350BC /* RxApolloTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3BBA4BAD1EC22A5A005350BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3BBA4B8F1EC1B9AF005350BC /* RxApollo */;
+			targetProxy = 3BBA4BAC1EC22A5A005350BC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3BBA4B961EC1B9AF005350BC /* Debug */ = {
@@ -311,6 +414,38 @@
 			};
 			name = Release;
 		};
+		3BBA4BAF1EC22A5A005350BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 3NVCP5J66M;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = RxApolloTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.scotthoyt.RxApolloTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3BBA4BB01EC22A5A005350BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 3NVCP5J66M;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = RxApolloTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.scotthoyt.RxApolloTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -328,6 +463,14 @@
 			buildConfigurations = (
 				3BBA4B991EC1B9AF005350BC /* Debug */,
 				3BBA4B9A1EC1B9AF005350BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3BBA4BAE1EC22A5A005350BC /* Build configuration list for PBXNativeTarget "RxApolloTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BBA4BAF1EC22A5A005350BC /* Debug */,
+				3BBA4BB01EC22A5A005350BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
