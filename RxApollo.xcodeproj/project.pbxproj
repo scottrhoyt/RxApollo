@@ -87,10 +87,10 @@
 		3BBA4B861EC1B9AF005350BC = {
 			isa = PBXGroup;
 			children = (
+				3BBA4B9F1EC1BBA5005350BC /* Frameworks */,
+				3BBA4B911EC1B9AF005350BC /* Products */,
 				3BBA4B921EC1B9AF005350BC /* RxApollo */,
 				3BBA4BA71EC22A5A005350BC /* RxApolloTests */,
-				3BBA4B911EC1B9AF005350BC /* Products */,
-				3BBA4B9F1EC1BBA5005350BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,8 +106,8 @@
 		3BBA4B921EC1B9AF005350BC /* RxApollo */ = {
 			isa = PBXGroup;
 			children = (
-				3BBA4B931EC1B9AF005350BC /* RxApollo.h */,
 				3BBA4B941EC1B9AF005350BC /* Info.plist */,
+				3BBA4B931EC1B9AF005350BC /* RxApollo.h */,
 				3BBA4B9B1EC1B9E0005350BC /* RxApollo.swift */,
 			);
 			path = RxApollo;
@@ -127,8 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				3BBA4BBA1EC22C88005350BC /* GraphQL */,
-				3BBA4BA81EC22A5A005350BC /* RxApolloTests.swift */,
 				3BBA4BAA1EC22A5A005350BC /* Info.plist */,
+				3BBA4BA81EC22A5A005350BC /* RxApolloTests.swift */,
 			);
 			path = RxApolloTests;
 			sourceTree = "<group>";
@@ -147,6 +147,7 @@
 				3BBA4BBB1EC22CAC005350BC /* HeroName.graphql */,
 			);
 			name = GraphQL;
+			path = GraphQL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
