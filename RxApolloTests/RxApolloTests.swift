@@ -10,26 +10,39 @@ import XCTest
 
 class RxApolloTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testFetchIgnoringCacheData() throws {
+        let query = HeroNameQuery()
+
+        let store = ApolloStore(records: [
+            "QUERY_ROOT": ["hero": Reference(key: "hero")],
+            "hero": [
+                "name": "R2-D2",
+                "__typename": "Droid",
+            ]
+            ])
+
+        let networkTransport = MockNetworkTransport(body: [
+            "data": [
+                "hero": [
+                    "name": "Luke Skywalker",
+                    "__typename": "Human"
+                ]
+            ]
+            ])
+
+        let client = ApolloClient(networkTransport: networkTransport, store: store)
+
+        let expectation = self.expectation(description: "Fetching query")
+
+        client.fetch(query: query, cachePolicy: .fetchIgnoringCacheData) { (result, error) in
+            defer { expectation.fulfill() }
+
+            guard let result = result else { XCTFail("No query result");  return }
+            
+            XCTAssertEqual(result.data?.hero?.name, "Luke Skywalker")
         }
+        
+        waitForExpectations(timeout: 1, handler: nil)
     }
     
 }
