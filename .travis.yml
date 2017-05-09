@@ -27,12 +27,12 @@ matrix:
       before_deploy:
         - carthage build --no-skip-current
         - carthage archive $FRAMEWORK_NAME
-    - script:
-        - swift test
-      env: JOB=SPM
-      os: osx
-      osx_image: xcode8.2
-      language: objective-c
+#    - script:
+#        - swift test
+#      env: JOB=SPM
+#      os: osx
+#      osx_image: xcode8.3
+#      language: objective-c
 #    - script:
 #        - swift test
 #      env: JOB=Linux
