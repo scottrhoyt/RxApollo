@@ -7,19 +7,15 @@
 //
 
 import XCTest
+import Apollo
+import RxSwift
+import RxApollo
+import RxBlocking
 
 class RxApolloTests: XCTestCase {
     
-    func testFetchIgnoringCacheData() throws {
+    func testSuccessfulQuery() throws {
         let query = HeroNameQuery()
-
-        let store = ApolloStore(records: [
-            "QUERY_ROOT": ["hero": Reference(key: "hero")],
-            "hero": [
-                "name": "R2-D2",
-                "__typename": "Droid",
-            ]
-            ])
 
         let networkTransport = MockNetworkTransport(body: [
             "data": [
@@ -28,21 +24,11 @@ class RxApolloTests: XCTestCase {
                     "__typename": "Human"
                 ]
             ]
-            ])
+        ])
 
-        let client = ApolloClient(networkTransport: networkTransport, store: store)
+        let client = ApolloClient(networkTransport: networkTransport)
+        let result = try client.rx.query(query: query).toBlocking().single()
 
-        let expectation = self.expectation(description: "Fetching query")
-
-        client.fetch(query: query, cachePolicy: .fetchIgnoringCacheData) { (result, error) in
-            defer { expectation.fulfill() }
-
-            guard let result = result else { XCTFail("No query result");  return }
-            
-            XCTAssertEqual(result.data?.hero?.name, "Luke Skywalker")
-        }
-        
-        waitForExpectations(timeout: 1, handler: nil)
+        XCTAssertEqual(result?.hero?.name, "Luke Skywalker")
     }
-    
 }
