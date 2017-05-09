@@ -1,2 +1,2 @@
-github "apollostack/apollo-ios"
+github "apollostack/apollo-ios" "imperative-store-api"
 github "ReactiveX/RxSwift" ~> 3.4

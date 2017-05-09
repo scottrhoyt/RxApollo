@@ -1,2 +1,3 @@
 github "ReactiveX/RxSwift" "3.4.1"
-github "apollostack/apollo-ios" "0.5.6"
+github "apollostack/apollo-ios" "03daf52e94da4fef78fca515331913bf08db5bd9"
+github "stephencelis/SQLite.swift" "0.11.2"

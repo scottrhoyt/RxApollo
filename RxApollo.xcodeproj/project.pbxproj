@@ -19,8 +19,8 @@
 		3BBA4BB51EC22AEE005350BC /* RxSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3BBA4B9E1EC1BB99005350BC /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3BBA4BB81EC22B68005350BC /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBA4BB71EC22B5F005350BC /* RxBlocking.framework */; };
 		3BBA4BB91EC22B6D005350BC /* RxBlocking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3BBA4BB71EC22B5F005350BC /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3BBA4BBF1EC22EA4005350BC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA4BBE1EC22EA4005350BC /* API.swift */; };
-		3BBA4BC11EC22F3C005350BC /* MockNetworkTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA4BC01EC22F3C005350BC /* MockNetworkTransport.swift */; };
+		3BF9A1701EC2574B001F66F0 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF9A1611EC2574B001F66F0 /* API.swift */; };
+		3BF9A1831EC25EDA001F66F0 /* MockNetworkTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF9A1821EC25EDA001F66F0 /* MockNetworkTransport.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,10 +59,22 @@
 		3BBA4BA81EC22A5A005350BC /* RxApolloTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxApolloTests.swift; sourceTree = "<group>"; };
 		3BBA4BAA1EC22A5A005350BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BBA4BB71EC22B5F005350BC /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
-		3BBA4BBB1EC22CAC005350BC /* HeroName.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = HeroName.graphql; sourceTree = "<group>"; };
-		3BBA4BBD1EC22E80005350BC /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
-		3BBA4BBE1EC22EA4005350BC /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		3BBA4BC01EC22F3C005350BC /* MockNetworkTransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkTransport.swift; sourceTree = "<group>"; };
+		3BF9A1611EC2574B001F66F0 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		3BF9A1621EC2574B001F66F0 /* CreateReviewForEpisode.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CreateReviewForEpisode.graphql; sourceTree = "<group>"; };
+		3BF9A1631EC2574B001F66F0 /* HeroAndFriendsNames.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HeroAndFriendsNames.graphql; sourceTree = "<group>"; };
+		3BF9A1641EC2574B001F66F0 /* HeroAppearsIn.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HeroAppearsIn.graphql; sourceTree = "<group>"; };
+		3BF9A1651EC2574B001F66F0 /* HeroDetails.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HeroDetails.graphql; sourceTree = "<group>"; };
+		3BF9A1661EC2574B001F66F0 /* HeroDetailsWithFragment.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HeroDetailsWithFragment.graphql; sourceTree = "<group>"; };
+		3BF9A1671EC2574B001F66F0 /* HeroName.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HeroName.graphql; sourceTree = "<group>"; };
+		3BF9A1681EC2574B001F66F0 /* HeroNameConditional.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HeroNameConditional.graphql; sourceTree = "<group>"; };
+		3BF9A1691EC2574B001F66F0 /* HeroParentTypeDependentField.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HeroParentTypeDependentField.graphql; sourceTree = "<group>"; };
+		3BF9A16A1EC2574B001F66F0 /* HeroTypeDependentAliasedField.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HeroTypeDependentAliasedField.graphql; sourceTree = "<group>"; };
+		3BF9A16B1EC2574B001F66F0 /* HumanWithNullMass.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HumanWithNullMass.graphql; sourceTree = "<group>"; };
+		3BF9A16C1EC2574B001F66F0 /* SameHeroTwice.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SameHeroTwice.graphql; sourceTree = "<group>"; };
+		3BF9A16D1EC2574B001F66F0 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		3BF9A16E1EC2574B001F66F0 /* Starship.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Starship.graphql; sourceTree = "<group>"; };
+		3BF9A16F1EC2574B001F66F0 /* TwoHeroes.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwoHeroes.graphql; sourceTree = "<group>"; };
+		3BF9A1821EC25EDA001F66F0 /* MockNetworkTransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkTransport.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,8 +145,8 @@
 			children = (
 				3BBA4BBA1EC22C88005350BC /* GraphQL */,
 				3BBA4BAA1EC22A5A005350BC /* Info.plist */,
-				3BBA4BC01EC22F3C005350BC /* MockNetworkTransport.swift */,
 				3BBA4BA81EC22A5A005350BC /* RxApolloTests.swift */,
+				3BF9A1821EC25EDA001F66F0 /* MockNetworkTransport.swift */,
 			);
 			path = RxApolloTests;
 			sourceTree = "<group>";
@@ -150,9 +162,21 @@
 		3BBA4BBA1EC22C88005350BC /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
-				3BBA4BBE1EC22EA4005350BC /* API.swift */,
-				3BBA4BBD1EC22E80005350BC /* schema.json */,
-				3BBA4BBB1EC22CAC005350BC /* HeroName.graphql */,
+				3BF9A1611EC2574B001F66F0 /* API.swift */,
+				3BF9A1621EC2574B001F66F0 /* CreateReviewForEpisode.graphql */,
+				3BF9A1631EC2574B001F66F0 /* HeroAndFriendsNames.graphql */,
+				3BF9A1641EC2574B001F66F0 /* HeroAppearsIn.graphql */,
+				3BF9A1651EC2574B001F66F0 /* HeroDetails.graphql */,
+				3BF9A1661EC2574B001F66F0 /* HeroDetailsWithFragment.graphql */,
+				3BF9A1671EC2574B001F66F0 /* HeroName.graphql */,
+				3BF9A1681EC2574B001F66F0 /* HeroNameConditional.graphql */,
+				3BF9A1691EC2574B001F66F0 /* HeroParentTypeDependentField.graphql */,
+				3BF9A16A1EC2574B001F66F0 /* HeroTypeDependentAliasedField.graphql */,
+				3BF9A16B1EC2574B001F66F0 /* HumanWithNullMass.graphql */,
+				3BF9A16C1EC2574B001F66F0 /* SameHeroTwice.graphql */,
+				3BF9A16D1EC2574B001F66F0 /* schema.json */,
+				3BF9A16E1EC2574B001F66F0 /* Starship.graphql */,
+				3BF9A16F1EC2574B001F66F0 /* TwoHeroes.graphql */,
 			);
 			path = GraphQL;
 			sourceTree = "<group>";
@@ -297,9 +321,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BBA4BBF1EC22EA4005350BC /* API.swift in Sources */,
 				3BBA4BA91EC22A5A005350BC /* RxApolloTests.swift in Sources */,
-				3BBA4BC11EC22F3C005350BC /* MockNetworkTransport.swift in Sources */,
+				3BF9A1701EC2574B001F66F0 /* API.swift in Sources */,
+				3BF9A1831EC25EDA001F66F0 /* MockNetworkTransport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
