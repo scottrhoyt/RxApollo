@@ -10,7 +10,9 @@ import Foundation
 import RxSwift
 import Apollo
 
+/// An `Error` emitted by `ApolloReactiveExtensions`.
 public enum RxApolloError: Error {
+    /// One or more `GraphQLError`s were encountered.
     case graphQLErrors([GraphQLError])
 }
 
