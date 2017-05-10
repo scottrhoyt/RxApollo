@@ -2,7 +2,7 @@
 
 ##### Breaking
 
-* None
+* Rename `ApolloClient.rx.query` to `ApolloClient.rx.fetch`
 
 ##### Enhancements
 

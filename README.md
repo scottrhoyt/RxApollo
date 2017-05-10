@@ -26,13 +26,13 @@ let apollo: ApolloClient
 let disposeBag = DisposeBag()
 ```
 
-### Query
+### Fetch
 
-Querying works just how you would expect it to:
+Fetching works just how you would expect it to:
 
 ```swift
 // Let's get our hero's name and print it or the error if there is one.
-apollo.rx.query(query: HeroNameQuery())
+apollo.rx.fetch(query: HeroNameQuery())
   .map { $0.hero?.name }
   .subscribe(onNext: { heroName in
     print("Our hero's name is \(heroName).")
@@ -56,7 +56,7 @@ apollo.rx.watch(query: HeroNameQuery())
   .disposed(by: disposeBag)
 ```
 
-Watching works quite well with using `RxCocoa` bindings:
+Watching also works quite well with using `RxCocoa` bindings:
 
 ```swift
 import RxCocoa
