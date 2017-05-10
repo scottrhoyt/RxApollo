@@ -36,7 +36,7 @@ class RxApolloTests: XCTestCase {
         XCTAssertEqual(result?.hero?.name, "Luke Skywalker")
     }
 
-    func testUnsuccessfulFetch() throws {
+    func testUnsuccessfulFetch() {
         let query = HeroNameQuery()
 
         let networkTransport = MockNetworkTransport(body: [
@@ -116,6 +116,55 @@ class RxApolloTests: XCTestCase {
 
         XCTAssertEqual(secondHeroName, "Artoo")
         XCTAssertEqual(secondFriendsNames, expectedFriendsNames)
+    }
+
+    // MARK: - Perform
+
+    func testSuccessfulPerform() throws {
+        let mutation = CreateAwesomeReviewMutation()
+
+        let networkTransport = MockNetworkTransport(body: [
+            "data": [
+                "createReview": [
+                    "stars": 10,
+                    "commentary": "This is awesome!",
+                    "__typename": "CreateReview"
+                ]
+            ]
+        ])
+
+        let client = ApolloClient(networkTransport: networkTransport, store: store(initialRecords: nil))
+        let result = try client.rx.perform(mutation: mutation).toBlocking().single()
+
+        XCTAssertEqual(result?.createReview?.stars, 10)
+        XCTAssertEqual(result?.createReview?.commentary, "This is awesome!")
+    }
+
+    func testUnsuccessfulPerform() {
+        let mutation = CreateAwesomeReviewMutation()
+
+        let networkTransport = MockNetworkTransport(body: [
+            "data": [
+                "createReview": [
+                    "commentary": "This is awesome!",
+                    "__typename": "CreateReview"
+                ]
+            ]
+            ])
+
+        let client = ApolloClient(networkTransport: networkTransport, store: store(initialRecords: nil))
+
+        do {
+            _ = try client.rx.perform(mutation: mutation).toBlocking().single()
+        } catch _ as GraphQLResultError {
+            return
+        } catch {
+            // Shouldn't get here
+            XCTFail()
+        }
+
+        // Shouldn't get here
+        XCTFail()
     }
 
     // MARK: - Helpers
