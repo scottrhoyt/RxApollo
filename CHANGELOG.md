@@ -12,6 +12,20 @@
 
 * None
 
+## 0.2.1
+
+##### Breaking
+
+* None
+
+##### Enhancements
+
+* None
+
+##### Bug Fixes
+
+* Fix tests on CI.
+
 ## 0.2.0
 
 ##### Breaking
