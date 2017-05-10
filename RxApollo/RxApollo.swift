@@ -16,6 +16,7 @@ public enum RxApolloError: Error {
     case graphQLErrors([GraphQLError])
 }
 
+/// Reactive extensions for `ApolloClient`.
 public struct ApolloReactiveExtensions {
     private let client: ApolloClient
 
@@ -105,6 +106,7 @@ public struct ApolloReactiveExtensions {
 }
 
 public extension ApolloClient {
+    /// Reactive extensions.
     var rx: ApolloReactiveExtensions { return ApolloReactiveExtensions(self) }
 }
 
