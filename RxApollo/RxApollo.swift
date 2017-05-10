@@ -15,7 +15,7 @@ enum RxApolloError: Error {
 }
 
 public struct ApolloReactiveExtensions {
-    let client: ApolloClient
+    private let client: ApolloClient
 
     fileprivate init(_ client: ApolloClient) {
         self.client = client
