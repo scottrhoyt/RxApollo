@@ -21,7 +21,7 @@ public struct ApolloReactiveExtensions {
         self.client = client
     }
 
-    public func query<Query: GraphQLQuery>(query: Query, cachePolicy: CachePolicy = .returnCacheDataElseFetch, queue: DispatchQueue = DispatchQueue.main) -> Maybe<Query.Data> {
+    public func fetch<Query: GraphQLQuery>(query: Query, cachePolicy: CachePolicy = .returnCacheDataElseFetch, queue: DispatchQueue = DispatchQueue.main) -> Maybe<Query.Data> {
         return Maybe.create { maybe in
             let cancellable = self.client.fetch(query: query, cachePolicy: cachePolicy, queue: queue) { result, error in
                 if let error = error {

@@ -31,7 +31,7 @@ class RxApolloTests: XCTestCase {
         ])
 
         let client = ApolloClient(networkTransport: networkTransport, store: store(initialRecords: nil))
-        let result = try client.rx.query(query: query).toBlocking().single()
+        let result = try client.rx.fetch(query: query).toBlocking().single()
 
         XCTAssertEqual(result?.hero?.name, "Luke Skywalker")
     }
@@ -50,7 +50,7 @@ class RxApolloTests: XCTestCase {
         let client = ApolloClient(networkTransport: networkTransport, store: store(initialRecords: nil))
 
         do {
-            _ = try client.rx.query(query: query).toBlocking().single()
+            _ = try client.rx.fetch(query: query).toBlocking().single()
         } catch _ as GraphQLResultError {
             return
         } catch {
