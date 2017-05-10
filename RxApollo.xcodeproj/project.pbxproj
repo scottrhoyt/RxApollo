@@ -49,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3B7C7BF81EC3B5790073344F /* CreateReviewForEpisode.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CreateReviewForEpisode.graphql; sourceTree = "<group>"; };
 		3BBA4B901EC1B9AF005350BC /* RxApollo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxApollo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BBA4B931EC1B9AF005350BC /* RxApollo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxApollo.h; sourceTree = "<group>"; };
 		3BBA4B941EC1B9AF005350BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -154,6 +155,7 @@
 				3BF9A1611EC2574B001F66F0 /* API.swift */,
 				3BF9A1631EC2574B001F66F0 /* HeroAndFriendsNames.graphql */,
 				3BF9A1671EC2574B001F66F0 /* HeroName.graphql */,
+				3B7C7BF81EC3B5790073344F /* CreateReviewForEpisode.graphql */,
 				3BF9A16D1EC2574B001F66F0 /* schema.json */,
 			);
 			path = GraphQL;
