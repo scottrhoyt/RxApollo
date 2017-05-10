@@ -16,9 +16,9 @@ class RxApolloTests: XCTestCase {
 
     let disposeBag = DisposeBag()
 
-    // MARK: - Query
+    // MARK: - Fetch
     
-    func testSuccessfulQuery() throws {
+    func testSuccessfulFetch() throws {
         let query = HeroNameQuery()
 
         let networkTransport = MockNetworkTransport(body: [
@@ -36,7 +36,7 @@ class RxApolloTests: XCTestCase {
         XCTAssertEqual(result?.hero?.name, "Luke Skywalker")
     }
 
-    func testUnsuccessfulQuery() throws {
+    func testUnsuccessfulFetch() throws {
         let query = HeroNameQuery()
 
         let networkTransport = MockNetworkTransport(body: [
