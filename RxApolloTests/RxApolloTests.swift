@@ -14,6 +14,8 @@ import RxBlocking
 
 class RxApolloTests: XCTestCase {
 
+    let disposeBag = DisposeBag()
+
     // MARK: - Query
     
     func testSuccessfulQuery() throws {
@@ -95,7 +97,9 @@ class RxApolloTests: XCTestCase {
 
         _ = watched.connect()
 
-        client.fetch(query: HeroNameQuery(), cachePolicy: .fetchIgnoringCacheData)
+        delay(dueTime: 0.1) {
+            client.fetch(query: HeroNameQuery(), cachePolicy: .fetchIgnoringCacheData)
+        }
 
         let results = try watched.take(2).timeout(5, scheduler: MainScheduler.instance).toBlocking().toArray()
 
@@ -126,5 +130,11 @@ class RxApolloTests: XCTestCase {
         }
 
         return ApolloStore(cache: cache)
+    }
+
+    private func delay(dueTime: RxTimeInterval, closure: @escaping (Void) -> Void) {
+        Observable<Void>.empty().delay(dueTime, scheduler: MainScheduler.instance)
+            .subscribe(onCompleted: closure)
+            .disposed(by: disposeBag)
     }
 }
