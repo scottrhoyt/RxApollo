@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import Apollo
 
-enum RxApolloError: Error {
+public enum RxApolloError: Error {
     case graphQLErrors([GraphQLError])
 }
 
