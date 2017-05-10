@@ -17,7 +17,7 @@ class RxApolloTests: XCTestCase {
     let disposeBag = DisposeBag()
 
     // MARK: - Fetch
-    
+
     func testSuccessfulFetch() throws {
         let query = HeroNameQuery()
 
@@ -80,8 +80,6 @@ class RxApolloTests: XCTestCase {
             "QUERY_ROOT.hero.friends.1": ["__typename": "Human", "name": "Han Solo"],
             "QUERY_ROOT.hero.friends.2": ["__typename": "Human", "name": "Leia Organa"],
         ])
-
-
 
         let networkTransport = MockNetworkTransport(body: [
             "data": [

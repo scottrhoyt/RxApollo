@@ -109,4 +109,3 @@ public extension ApolloClient {
     /// Reactive extensions.
     var rx: ApolloReactiveExtensions { return ApolloReactiveExtensions(self) }
 }
-
