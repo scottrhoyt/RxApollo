@@ -6,7 +6,7 @@
 
 ##### Enhancements
 
-* None
+* Add documentation comments.
 
 ##### Bug Fixes
 
