@@ -7,6 +7,8 @@
 ##### Enhancements
 
 * Add documentation comments.
+* Improve test coverage.
+* Add SwiftLint
 
 ##### Bug Fixes
 

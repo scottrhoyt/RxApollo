@@ -11,6 +11,203 @@ public enum Episode: String {
 
 extension Episode: JSONDecodable, JSONEncodable {}
 
+/// The input object sent when someone is creating a new review
+public struct ReviewInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(stars: Int, commentary: String? = nil, favoriteColor: ColorInput? = nil) {
+    graphQLMap = ["stars": stars, "commentary": commentary, "favoriteColor": favoriteColor]
+  }
+}
+
+/// The input object sent when passing in a color
+public struct ColorInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(red: Int, green: Int, blue: Int) {
+    graphQLMap = ["red": red, "green": green, "blue": blue]
+  }
+}
+
+
+public final class CreateReviewForEpisodeMutation: GraphQLMutation {
+  public static let operationString =
+    "mutation CreateReviewForEpisode($episode: Episode!, $review: ReviewInput!) {" +
+    "  createReview(episode: $episode, review: $review) {" +
+    "    __typename" +
+    "    stars" +
+    "    commentary" +
+    "  }" +
+    "}"
+
+  public var episode: Episode
+  public var review: ReviewInput
+
+  public init(episode: Episode, review: ReviewInput) {
+    self.episode = episode
+    self.review = review
+  }
+
+  public var variables: GraphQLMap? {
+    return ["episode": episode, "review": review]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let selections: [Selection] = [
+      Field("createReview", arguments: ["episode": Variable("episode"), "review": Variable("review")], type: .object(Data.CreateReview.self)),
+    ]
+
+    public var snapshot: Snapshot
+
+    public init(snapshot: Snapshot) {
+      self.snapshot = snapshot
+    }
+
+    public init(createReview: CreateReview? = nil) {
+      self.snapshot = ["createReview": createReview]
+    }
+
+    public var createReview: CreateReview? {
+      get {
+        return CreateReview(snapshot: snapshot["createReview"]! as! Snapshot)
+      }
+      set {
+        snapshot["createReview"] = newValue?.snapshot
+      }
+    }
+
+    public struct CreateReview: GraphQLSelectionSet {
+      public static let selections: [Selection] = [
+        Field("__typename", type: .nonNull(.scalar(String.self))),
+        Field("stars", type: .nonNull(.scalar(Int.self))),
+        Field("commentary", type: .scalar(String.self)),
+      ]
+
+      public var snapshot: Snapshot
+
+      public init(snapshot: Snapshot) {
+        self.snapshot = snapshot
+      }
+
+      public init(__typename: String, stars: Int, commentary: String? = nil) {
+        self.snapshot = ["__typename": __typename, "stars": stars, "commentary": commentary]
+      }
+
+      public var __typename: String {
+        get {
+          return snapshot["__typename"]! as! String
+        }
+        set {
+          snapshot["__typename"] = newValue
+        }
+      }
+
+      public var stars: Int {
+        get {
+          return snapshot["stars"]! as! Int
+        }
+        set {
+          snapshot["stars"] = newValue
+        }
+      }
+
+      public var commentary: String? {
+        get {
+          return snapshot["commentary"]! as! String?
+        }
+        set {
+          snapshot["commentary"] = newValue
+        }
+      }
+    }
+  }
+}
+
+
+public final class CreateAwesomeReviewMutation: GraphQLMutation {
+  public static let operationString =
+    "mutation CreateAwesomeReview {" +
+    "  createReview(episode: JEDI, review: {stars: 10, commentary: \"This is awesome!\"}) {" +
+    "    __typename" +
+    "    stars" +
+    "    commentary" +
+    "  }" +
+    "}"
+
+  public init() {
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let selections: [Selection] = [
+      Field("createReview", arguments: ["episode": "JEDI", "review": ["stars": 10, "commentary": "This is awesome!"]], type: .object(Data.CreateReview.self)),
+    ]
+
+    public var snapshot: Snapshot
+
+    public init(snapshot: Snapshot) {
+      self.snapshot = snapshot
+    }
+
+    public init(createReview: CreateReview? = nil) {
+      self.snapshot = ["createReview": createReview]
+    }
+
+    public var createReview: CreateReview? {
+      get {
+        return CreateReview(snapshot: snapshot["createReview"]! as! Snapshot)
+      }
+      set {
+        snapshot["createReview"] = newValue?.snapshot
+      }
+    }
+
+    public struct CreateReview: GraphQLSelectionSet {
+      public static let selections: [Selection] = [
+        Field("__typename", type: .nonNull(.scalar(String.self))),
+        Field("stars", type: .nonNull(.scalar(Int.self))),
+        Field("commentary", type: .scalar(String.self)),
+      ]
+
+      public var snapshot: Snapshot
+
+      public init(snapshot: Snapshot) {
+        self.snapshot = snapshot
+      }
+
+      public init(__typename: String, stars: Int, commentary: String? = nil) {
+        self.snapshot = ["__typename": __typename, "stars": stars, "commentary": commentary]
+      }
+
+      public var __typename: String {
+        get {
+          return snapshot["__typename"]! as! String
+        }
+        set {
+          snapshot["__typename"] = newValue
+        }
+      }
+
+      public var stars: Int {
+        get {
+          return snapshot["stars"]! as! Int
+        }
+        set {
+          snapshot["stars"] = newValue
+        }
+      }
+
+      public var commentary: String? {
+        get {
+          return snapshot["commentary"]! as! String?
+        }
+        set {
+          snapshot["commentary"] = newValue
+        }
+      }
+    }
+  }
+}
+
 
 public final class HeroAndFriendsNamesQuery: GraphQLQuery {
   public static let operationString =

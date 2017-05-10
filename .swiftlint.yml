@@ -1,0 +1,13 @@
+excluded:
+  - Carthage
+  - Packages
+  - RxApolloTests/GraphQL/API.swift
+
+line_length:
+  warning: 150
+  error: 300
+  ignores_comments: true
+
+identifier_name:
+  excluded:
+    - rx
