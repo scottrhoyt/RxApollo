@@ -3,4 +3,11 @@ excluded:
   - Packages
   - RxApolloTests/GraphQL/API.swift
 
-line_length: 150
+line_length:
+  warning: 150
+  error: 300
+  ignores_comments: true
+
+identifier_name:
+  excluded:
+    - rx

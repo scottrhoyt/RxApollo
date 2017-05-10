@@ -31,7 +31,10 @@ public struct ApolloReactiveExtensions {
     ///   - cachePolicy: A cache policy that specifies when results should be fetched from the server and when data should be loaded from the local cache.
     ///   - queue: A dispatch queue on which the result handler will be called. Defaults to the main queue.
     /// - Returns: A `Maybe` that emits the results of the query.
-    public func fetch<Query: GraphQLQuery>(query: Query, cachePolicy: CachePolicy = .returnCacheDataElseFetch, queue: DispatchQueue = DispatchQueue.main) -> Maybe<Query.Data> {
+    public func fetch<Query: GraphQLQuery>(
+        query: Query,
+        cachePolicy: CachePolicy = .returnCacheDataElseFetch,
+        queue: DispatchQueue = DispatchQueue.main) -> Maybe<Query.Data> {
         return Maybe.create { maybe in
             let cancellable = self.client.fetch(query: query, cachePolicy: cachePolicy, queue: queue) { result, error in
                 if let error = error {
@@ -58,7 +61,10 @@ public struct ApolloReactiveExtensions {
     ///   - cachePolicy: A cache policy that specifies when results should be fetched from the server or from the local cache.
     ///   - queue: A dispatch queue on which the result handler will be called. Defaults to the main queue.
     /// - Returns: An `Observable` that emits the results of watching the `query`.
-    public func watch<Query: GraphQLQuery>(query: Query, cachePolicy: CachePolicy = .returnCacheDataElseFetch, queue: DispatchQueue = DispatchQueue.main) -> Observable<Query.Data> {
+    public func watch<Query: GraphQLQuery>(
+        query: Query,
+        cachePolicy: CachePolicy = .returnCacheDataElseFetch,
+        queue: DispatchQueue = DispatchQueue.main) -> Observable<Query.Data> {
         return Observable.create { observer in
             let watcher = self.client.watch(query: query, cachePolicy: cachePolicy, queue: queue) { result, error in
                 if let error = error {
