@@ -1,0 +1,6 @@
+excluded:
+  - Carthage
+  - Packages
+  - RxApolloTests/GraphQL/API.swift
+
+line_length: 150

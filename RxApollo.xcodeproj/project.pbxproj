@@ -180,6 +180,7 @@
 			buildConfigurationList = 3BBA4B981EC1B9AF005350BC /* Build configuration list for PBXNativeTarget "RxApollo" */;
 			buildPhases = (
 				3BBA4B8B1EC1B9AF005350BC /* Sources */,
+				3B7C7BF91EC3B9000073344F /* SwiftLint */,
 				3BBA4B8C1EC1B9AF005350BC /* Frameworks */,
 				3BBA4B8D1EC1B9AF005350BC /* Headers */,
 				3BBA4B8E1EC1B9AF005350BC /* Resources */,
@@ -272,6 +273,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3B7C7BF91EC3B9000073344F /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		3BBA4BBC1EC22CD0005350BC /* Generate GraphQL Code */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
