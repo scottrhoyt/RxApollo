@@ -2,6 +2,20 @@
 
 ##### Breaking
 
+* None
+
+##### Enhancements
+
+* None
+
+##### Bug Fixes
+
+* None
+
+## 0.3.0
+
+##### Breaking
+
 * Rename `ApolloClient.rx.query` to `ApolloClient.rx.fetch`
 
 ##### Enhancements
