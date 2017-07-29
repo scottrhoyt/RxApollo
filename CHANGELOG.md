@@ -6,7 +6,7 @@
 
 ##### Enhancements
 
-* None
+* Upate Apollo to 0.6
 
 ##### Bug Fixes
 
