@@ -14,7 +14,7 @@ matrix:
   include:
     - script:
         - carthage bootstrap --platform ios --cache-builds
-        - set -o pipefail && xcodebuild -scheme $FRAMEWORK_NAME -project $FRAMEWORK_NAME.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.3' clean build-for-testing test | xcpretty
+        - set -o pipefail && xcodebuild -scheme $FRAMEWORK_NAME -project $FRAMEWORK_NAME.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.0' clean build-for-testing test | xcpretty
       env: JOB=Xcode
       os: osx
       osx_image: xcode8.3
