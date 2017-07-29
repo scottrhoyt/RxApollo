@@ -1,2 +1,2 @@
-github "apollographql/apollo-ios" "imperative-store-api"
+github "apollographql/apollo-ios" ~> 0.6
 github "ReactiveX/RxSwift" ~> 3.4
