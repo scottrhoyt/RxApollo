@@ -8,6 +8,10 @@
 
 * None
 
+##### Bug Fixes
+
+* None
+
 ## 0.4.1
 
 ##### Breaking
