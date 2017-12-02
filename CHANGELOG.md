@@ -8,6 +8,16 @@
 
 * None
 
+## 0.4.1
+
+##### Breaking
+
+* None
+
+##### Enhancements
+
+* Add Cocoapods support.
+
 ##### Bug Fixes
 
 * None
