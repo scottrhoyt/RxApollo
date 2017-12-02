@@ -2,6 +2,20 @@
 
 ##### Breaking
 
+* None
+
+##### Enhancements
+
+* None
+
+##### Bug Fixes
+
+* None
+
+## 0.6.0
+
+##### Breaking
+
 * Apollo-ios 0.7
 
 ##### Enhancements
