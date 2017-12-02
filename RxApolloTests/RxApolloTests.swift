@@ -179,7 +179,7 @@ class RxApolloTests: XCTestCase {
         return ApolloStore(cache: cache)
     }
 
-    private func delay(dueTime: RxTimeInterval, closure: @escaping (Void) -> Void) {
+    private func delay(dueTime: RxTimeInterval, closure: @escaping () -> Void) {
         Observable<Void>.empty().delay(dueTime, scheduler: MainScheduler.instance)
             .subscribe(onCompleted: closure)
             .disposed(by: disposeBag)
