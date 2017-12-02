@@ -17,6 +17,6 @@ Pod::Spec.new do |s|
   s.source_files = 'RxApollo/*.swift'
 
   s.dependency 'Apollo', '~> 0.6.0'
-  s.dependency 'RxSwift', '~> 3.4'
+  s.dependency 'RxSwift', '~> 4.0'
 
 end

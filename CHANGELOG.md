@@ -2,7 +2,7 @@
 
 ##### Breaking
 
-* None
+* Swift 4
 
 ##### Enhancements
 
