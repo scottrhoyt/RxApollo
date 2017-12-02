@@ -2,7 +2,7 @@
 
 ##### Breaking
 
-* None
+* Apollo-ios 0.7
 
 ##### Enhancements
 
@@ -17,6 +17,7 @@
 ##### Breaking
 
 * Swift 4
+* RxSwift 4.0
 
 ##### Enhancements
 
