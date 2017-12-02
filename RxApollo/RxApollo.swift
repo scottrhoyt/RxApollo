@@ -17,7 +17,7 @@ public enum RxApolloError: Error {
 }
 
 /// Reactive extensions for `ApolloClient`.
-public struct ApolloReactiveExtensions {
+public final class ApolloReactiveExtensions {
     private let client: ApolloClient
 
     fileprivate init(_ client: ApolloClient) {

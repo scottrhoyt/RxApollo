@@ -2,7 +2,8 @@
 
 ##### Breaking
 
-* None
+* Change `ApolloReactiveExtensions` to a `class` to reflect the identity
+  relationship between `ApolloReactiveExtensions` and `ApolloClient`.
 
 ##### Enhancements
 
