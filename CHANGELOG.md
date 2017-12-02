@@ -2,6 +2,20 @@
 
 ##### Breaking
 
+* None
+
+##### Enhancements
+
+* None
+
+##### Bug Fixes
+
+* None
+
+## 0.5.0
+
+##### Breaking
+
 * Swift 4
 
 ##### Enhancements
