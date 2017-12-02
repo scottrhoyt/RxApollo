@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'RxApollo'
-  s.version          = '0.4.0'
+  s.version          = '0.4.1'
   s.summary          = 'RxSwift extensions for Apollo.'
 
   s.description      = <<-DESC
