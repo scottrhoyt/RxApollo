@@ -17,7 +17,7 @@ matrix:
         - set -o pipefail && xcodebuild -scheme $FRAMEWORK_NAME -project $FRAMEWORK_NAME.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.0' clean build-for-testing test | xcpretty
       env: JOB=Xcode
       os: osx
-      osx_image: xcode8.3
+      osx_image: xcode9
       language: objective-c
       before_install:
         - ./scripts/upstall-carthage.sh
