@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'RxApollo'
-  s.version          = '0.6.0'
+  s.version          = '0.7.0'
   s.summary          = 'RxSwift extensions for Apollo.'
 
   s.description      = <<-DESC
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
   s.source_files = 'RxApollo/*.swift'
 
-  s.dependency 'Apollo', '~> 0.7.0'
+  s.dependency 'Apollo', '~> 0.8'
   s.dependency 'RxSwift', '~> 4.0'
 
 end

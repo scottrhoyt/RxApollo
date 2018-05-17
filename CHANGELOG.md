@@ -2,6 +2,18 @@
 
 ##### Breaking
 
+* Apollo-ios 0.8
+
+##### Enhancements
+
+* None
+
+##### Bug Fixes
+
+* None
+
+##### Breaking
+
 * Change `ApolloReactiveExtensions` to a `class` to reflect the identity
   relationship between `ApolloReactiveExtensions` and `ApolloClient`.
 
