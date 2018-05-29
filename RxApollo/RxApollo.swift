@@ -54,6 +54,33 @@ public final class ApolloReactiveExtensions {
         }
     }
 
+    /// Subscribe to a subscription
+    ///
+    /// - Parameters:
+    ///   - subscription: The subscription to subscribe to.
+    ///   - queue: A dispatch queue on which the result handler will be called. Defaults to the main queue.
+    ///   - resultHandler: An optional closure that is called when mutation results are available or when an error occurs.
+    /// - Returns: An object that can be used to cancel an in progress subscription.
+    public func subscribe<Subscription: GraphQLSubscription>(
+        subscription: Subscription,
+        queue: DispatchQueue = DispatchQueue.main) -> Observable<Subscription.Data> {
+        return Observable.create { observer in
+            let cancellable = self.client.subscribe(subscription: subscription, queue: queue) { result, error in
+                if let error = error {
+                    observer.onError(error)
+                } else if let errors = result?.errors {
+                    observer.onError(RxApolloError.graphQLErrors(errors))
+                } else if let data = result?.data {
+                    observer.onNext(data)
+                }
+            }
+
+            return Disposables.create {
+                cancellable.cancel()
+            }
+        }
+    }
+
     /// Watches a query by first fetching an initial result from the server or from the local cache, depending on the current contents of the cache and the specified cache policy. After the initial fetch, the returned `Observable` will emit events whenever any of the data the query result depends on changes in the local cache.
     ///
     /// - Parameters:
